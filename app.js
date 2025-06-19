@@ -121,7 +121,7 @@ app.put("/tasks/:id", (req, res) => {
   if (description != undefined) {
     task.description = description;
   }
-  if (completed != undefined) {
+  if (completed != undefined && typeof completed == "boolean") {
     task.completed = completed;
   }
   if (priority != undefined) {
@@ -130,7 +130,7 @@ app.put("/tasks/:id", (req, res) => {
 
   writeTasks(tasks);
   res
-    .status(400)
+    .status(200)
     .json({ task, response: "Task has been updated successfully !" });
 });
 

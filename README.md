@@ -40,3 +40,14 @@ GET	              /tasks/priority/:level	               Filter tasks by priority
 POST	           /tasks	                                 Create a new task
 PUT             /tasks/:id	                             Update task by ID
 DELETE	       /tasks/:id	                               Delete task by ID  
+
+
+///////////////// SETUP ///////////
+
+git clone https://github.com/your-username/task-manager-api.git
+cd task-manager-api
+npm install
+
+/////////////////// RUN ///////////////
+node index.js
+The server will start on http://localhost:3000 (or your configured port)

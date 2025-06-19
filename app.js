@@ -36,14 +36,14 @@ app.get("/tasks", (req, res) => {
   const isCompleted = req.query.completed === "true";
 
   if (!tasks) {
-    res.status(500).json({ response: "Sorry error loading your data" });
+    return res.status(500).json({ response: "Sorry error loading your data" });
   }
 
   if (isCompleted) {
     const filteredTasks = tasks.tasks.filter(
       (task) => task.completed === isCompleted
     );
-    res.json({ tasks: filteredTasks });
+    return res.json({ tasks: filteredTasks });
   }
 
   res.json(tasks);
@@ -109,7 +109,7 @@ app.put("/tasks/:id", (req, res) => {
   const task = tasks.tasks.find((t) => t.id == req.params.id);
 
   if (!task) {
-    res.status(404).json({ response: "Please enter valid Task :) " });
+    return res.status(404).json({ response: "Please enter valid Task :) " });
   }
 
   const { title, description, completed } = req.body;
@@ -135,7 +135,7 @@ app.delete("/tasks/:id", (req, res) => {
 
   const findTaskIndex = tasks.tasks.findIndex((t) => t.id == req.params.id);
   if (findTaskIndex == -1) {
-    res.status(404).json({ response: "Please enter valid task id :( " });
+    return res.status(404).json({ response: "Please enter valid task id :( " });
   }
 
   const deletedTask = tasks.tasks.splice(findTaskIndex, 1);

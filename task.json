@@ -1,13 +1,6 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Set up environment",
-      "description": "Install Node.js, npm, and git",
-      "completed": true,
-      "priority": "high"
-    },
-    {
       "id": 2,
       "title": "Create a new project",
       "description": "Create a new project using the Express application generator",
@@ -111,6 +104,31 @@
       "description": "Do atleast 10 Questions",
       "completed": false,
       "priority": "high"
+    },
+    {
+      "id": 17,
+      "title": "New Task",
+      "description": "New Task Description",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "title": "New Task",
+      "description": "New Task Description",
+      "completed": false
+    },
+    {
+      "id": 18,
+      "title": "New Task",
+      "description": "New Task Description",
+      "completed": false
+    },
+    {
+      "id": 19,
+      "title": "New Task",
+      "description": "New Task Description",
+      "completed": false,
+      "priority": "medium"
     }
   ]
 }

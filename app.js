@@ -97,11 +97,12 @@ app.post("/tasks", (req, res) => {
     title,
     description,
     completed,
+    priority,
   };
 
   tasks.tasks.push(task);
   writeTasks(tasks);
-  res.status(200).json({ task, response: "Task is added successfully" });
+  res.status(201).json({ task, response: "Task is added successfully" });
 });
 
 app.put("/tasks/:id", (req, res) => {
@@ -123,10 +124,13 @@ app.put("/tasks/:id", (req, res) => {
   if (completed != undefined) {
     task.completed = completed;
   }
+  if (priority != undefined) {
+    task.priority = priority;
+  }
 
   writeTasks(tasks);
   res
-    .status(200)
+    .status(400)
     .json({ task, response: "Task has been updated successfully !" });
 });
 
